@@ -1,1 +1,33 @@
-
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div  class="h-screen w-screen flex justify-center items-center bg-stone-300 ">
+        <div class="flex items-center flex-col bg-white rounded-lg h-fit w-[30vw] shadow-lg">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaYQe7sk8paP8GwcE7D6iEMSmj82HEVN8lZg&s" alt="" class="rounded-full h-20 mt-20">
+            <h1 class="mt-12 font-bold text-3xl">Todo List</h1>
+            <input type="text" id="task" class="mt-8 border-2 border-stone-400 rounded-lg h-10 w-[80%] pl-4" placeholder="Даалгавар нэмэх"/>
+            <button onclick="add()" class="mt-8 bg-blue-500 h-10 px-4 rounded-lg">Нэмэх</button>
+            <p id="return" class="my-8"></p>
+        </div>
+    </div>
+  </body>
+  <script>
+    let counter = 0;
+    function add(){
+        if(document.getElementById("task").value === "") {
+            alert("Даалгавар оруулна уу");
+            return;
+        }
+        counter += 1;
+        const a = document.createElement("p");
+        a.textContent = counter + '. ' + document.getElementById("task").value;
+        a.className = "bg-stone-300 rounded-lg w-[80%]"; 
+        document.getElementById("return").appendChild(a);
+    }
+  </script>
+</html>
